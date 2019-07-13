@@ -1,6 +1,8 @@
 #ifndef IMPL_OSUTIL_H
 #define IMPL_OSUTIL_H
 
-bool isWindowsSystem();
+namespace util::os {
+    bool isWindowsSystem();
+}
 
 #endif //IMPL_OSUTIL_H
