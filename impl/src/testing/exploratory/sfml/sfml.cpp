@@ -6,8 +6,6 @@
 #include "sfml.h"
 #include "../../../impl/util/OsUtil/OsUtil.h"
 #include "../../../impl/util/StringUtil/StringUtil.h"
-#include "../../../impl/util/OsUtil/OsUtil.h"
-#include "../../../impl/util/StringUtil/StringUtil.h"
 #include <SFML/Graphics.hpp>
 
 using namespace std;
