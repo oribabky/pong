@@ -16,9 +16,12 @@ public:
     const float diameter;
     explicit PongBall(const float gameWindowWidth) :
             diameter{determineBallDiameter(gameWindowWidth)},
-            sf::CircleShape{diameter} {
+            sf::CircleShape{determineBallDiameter(gameWindowWidth)} {
         const sf::Color whiteColor{0xFF, 0xFF, 0xFF};
         this->setFillColor(whiteColor);
+    }
+    void moveBall() {
+        this->move(0.05, 0);
     }
 };
 
