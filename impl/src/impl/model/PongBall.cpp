@@ -3,17 +3,22 @@
 //
 
 #include "PongBall.h"
+#include <cmath>
 
 PongBall::PongBall(const float &gameWindowWidth) :
         sf::CircleShape{determineBallDiameter(gameWindowWidth)},
-        direction{AngleDegrees{0}}
+        direction{AngleDegrees{340}}
         {
     const sf::Color whiteColor{0xFF, 0xFF, 0xFF};
     setFillColor(whiteColor);
 }
 
 void PongBall::moveBall() {
-    move(0.05, 0);
+    float xDistance = cos(direction.asRadians()) * MOVING_DISTANCE;
+    float yDistance = sin(direction.asRadians()) * MOVING_DISTANCE;
+    yDistance = -yDistance; // match the coordinates system in the window object
+
+    move(xDistance, yDistance);
 }
 
 float PongBall::determineBallDiameter(const float& gameWindowWidth) {

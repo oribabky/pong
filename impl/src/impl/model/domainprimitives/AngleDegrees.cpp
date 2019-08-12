@@ -3,6 +3,7 @@
 //
 
 #include "AngleDegrees.h"
+#include <cmath>
 
 bool AngleDegrees::isValidAngle(const float& angle) {
     return angle >= 0 && angle <= 360;
@@ -23,6 +24,10 @@ void AngleDegrees::setAngle(const float& inputAngle) {
     }
 }
 
-float AngleDegrees::getAngle() {
+float AngleDegrees::getAngle() const {
     return angle;
+}
+
+float AngleDegrees::asRadians() const {
+    return M_PI * angle / 180;
 }

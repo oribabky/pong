@@ -10,6 +10,7 @@
 
 class PongBall : public sf::CircleShape {
     constexpr static float BALL_SIZE_PERCENTAGE_WINDOW = 0.05;
+    constexpr static float MOVING_DISTANCE = 0.05;
     const AngleDegrees direction;
     static float determineBallDiameter(const float& gameWindowWidth);
 public:

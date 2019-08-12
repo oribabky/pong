@@ -14,7 +14,8 @@ class AngleDegrees {
 public:
     explicit AngleDegrees(const float& initialAngle);
     void setAngle(const float& inputAngle);
-    float getAngle();
+    float getAngle() const;
+    float asRadians() const;
 };
 
 
