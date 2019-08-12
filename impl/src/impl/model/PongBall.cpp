@@ -5,7 +5,9 @@
 #include "PongBall.h"
 
 PongBall::PongBall(const float &gameWindowWidth) :
-        sf::CircleShape{determineBallDiameter(gameWindowWidth)} {
+        sf::CircleShape{determineBallDiameter(gameWindowWidth)},
+        direction{AngleDegrees{0}}
+        {
     const sf::Color whiteColor{0xFF, 0xFF, 0xFF};
     setFillColor(whiteColor);
 }

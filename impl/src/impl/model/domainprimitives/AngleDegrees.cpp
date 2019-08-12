@@ -2,17 +2,17 @@
 // Created by Tobias Axelsson on 2019-08-06.
 //
 
-#include "DegreeAngle.h"
+#include "AngleDegrees.h"
 
-bool DegreeAngle::isValidAngle(const float& angle) {
+bool AngleDegrees::isValidAngle(const float& angle) {
     return angle >= 0 && angle <= 360;
 }
 
-DegreeAngle::DegreeAngle(const float& initialAngle) : angle{0} {
+AngleDegrees::AngleDegrees(const float& initialAngle) : angle{0} {
     setAngle(initialAngle);
 }
 
-void DegreeAngle::setAngle(const float& inputAngle) {
+void AngleDegrees::setAngle(const float& inputAngle) {
     if (!isValidAngle(inputAngle)) {
         throw std::invalid_argument("Invalid angle!");
     }
@@ -23,6 +23,6 @@ void DegreeAngle::setAngle(const float& inputAngle) {
     }
 }
 
-float DegreeAngle::getAngle() {
+float AngleDegrees::getAngle() {
     return angle;
 }

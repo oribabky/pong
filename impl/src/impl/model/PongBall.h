@@ -6,10 +6,11 @@
 #define IMPL_PONGBALL_H
 
 #include <SFML/Graphics/CircleShape.hpp>
+#include "domainprimitives/AngleDegrees.h"
 
 class PongBall : public sf::CircleShape {
-    constexpr static const float BALL_SIZE_PERCENTAGE_WINDOW = 0.05;
-
+    constexpr static float BALL_SIZE_PERCENTAGE_WINDOW = 0.05;
+    const AngleDegrees direction;
     static float determineBallDiameter(const float& gameWindowWidth);
 public:
     explicit PongBall(const float& gameWindowWidth);
