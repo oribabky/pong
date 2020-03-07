@@ -49,3 +49,7 @@ _deps
 *.cbp
 
 cmake-build-debug/
+
+#other
+*.DS_Store
+
