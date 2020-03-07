@@ -12,8 +12,8 @@ PongBall::PongBall(const float &gameWindowWidth) :
         {
     const sf::Color whiteColor{0xFF, 0xFF, 0xFF};
     setFillColor(whiteColor);
-    setOrigin(getRadius()/2, getRadius()/2);
-    setPosition(100, 100);
+    setOrigin(getRadius(), getRadius());
+    setPosition(200, 200);
 }
 
 void PongBall::moveBall() {
