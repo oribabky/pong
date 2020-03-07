@@ -6,15 +6,17 @@
 #define IMPL_GAMEWINDOW_H
 
 #include <SFML/Graphics/RenderWindow.hpp>
+#include "../model/PongWorld.h"
 
 using namespace std;
 
 class GameWindow: public sf::RenderWindow {
-    static const unsigned SCREEN_WIDTH = 640;
-    static const unsigned SCREEN_HEIGHT = 480;
-    static const unsigned BITS_PER_PIXEL = 32;
+    static const auto SCREEN_WIDTH = 640;
+    static const auto SCREEN_HEIGHT = 480;
+    static const auto BITS_PER_PIXEL = 32;
 public:
     explicit GameWindow(const string& title);
+    void drawWorld(const PongWorld& pongWorld);
 };
 
 

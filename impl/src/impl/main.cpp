@@ -1,11 +1,11 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
 #include "view/GameWindow.h"
-#include "model/PongBall.h"
+#include "model/PongWorld.h"
 
 int main() {
     GameWindow window{"my game"};
-    PongBall ball{static_cast<float>(window.getSize().x)};
+    PongWorld world{window.getSize().x, window.getSize().y};
 
     while (window.isOpen()) {
         window.display();
@@ -18,7 +18,7 @@ int main() {
             }
         }
 
-        window.draw(ball);
-        ball.moveBall();
+        world.moveBall();
+        window.drawWorld(world);
     }
 }
