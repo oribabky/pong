@@ -8,11 +8,12 @@
 
 PongBall::PongBall(const float &gameWindowWidth) :
         sf::CircleShape{determineBallDiameter(gameWindowWidth)},
-        direction{AngleDegrees{0}}
+        direction{AngleDegrees{33}}
         {
     const sf::Color whiteColor{0xFF, 0xFF, 0xFF};
     setFillColor(whiteColor);
-    setPosition(40, 40);
+    setOrigin(getRadius()/2, getRadius()/2);
+    setPosition(100, 100);
 }
 
 void PongBall::moveBall() {
@@ -23,9 +24,23 @@ void PongBall::moveBall() {
     move(xDistance, yDistance);
 }
 
-void PongBall::bounce() {
-    std::cout << "Bounce!" << std::endl;
-    auto newAngle = fmod((direction.getAngle() + 13),360);
+void PongBall::bounceVerticalWall() {
+    auto newAngle = 0;
+    if (direction.getAngle() > 180) {
+        newAngle = 360 - direction.getAngle() + 180;
+    } else {
+        newAngle = 180 - direction.getAngle();
+    }
+    bounce(newAngle);
+}
+
+void PongBall::bounceHorizontalWall() {
+    auto newAngle = 360 - direction.getAngle();
+    bounce(newAngle);
+}
+
+void PongBall::bounce(const float &newAngle) {
+    std::cout << "Bounce! new angle: " << newAngle << std::endl;
     direction.setAngle(newAngle);
 }
 

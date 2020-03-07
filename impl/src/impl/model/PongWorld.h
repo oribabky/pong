@@ -10,7 +10,7 @@
 #include "Wall.h"
 
 class PongWorld {
-    static constexpr auto WALL_THICKNESS = 10;
+    static constexpr auto WALL_THICKNESS = 15;
 public:
     PongBall pongBall;
     const Wall leftWall;

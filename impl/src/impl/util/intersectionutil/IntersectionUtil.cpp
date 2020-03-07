@@ -10,11 +10,12 @@
 using namespace sf;
 
 bool intersects(const CircleShape &circle, const RectangleShape &rect) {
-    const auto xCircleDistance = abs(rect.getPosition().x - circle.getPosition().x);
-    const auto yCircleDistance = abs(rect.getPosition().y - circle.getPosition().y);
     const auto rectWidth = rect.getSize().x;
     const auto rectHeight = rect.getSize().y;
     const auto circleRadius = circle.getRadius();
+
+    const auto xCircleDistance = abs(rect.getPosition().x - circle.getPosition().x);
+    const auto yCircleDistance = abs(-rect.getPosition().y - -circle.getPosition().y);
 
     if (xCircleDistance > (rectWidth/2 + circleRadius)) {
         return false;
@@ -33,11 +34,4 @@ bool intersects(const CircleShape &circle, const RectangleShape &rect) {
                                                           pow((yCircleDistance - rectHeight/2), 2);
 
     return (cornerDistance_sq <= (pow(circleRadius, 2)));
-}
-
-bool intersects2(const CircleShape &circle, const RectangleShape &rectangle) {
-    if (rectangle.getLocalBounds().contains(circle.getOrigin())) {
-        return true;
-    }
-    return false;
 }

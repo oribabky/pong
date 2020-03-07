@@ -10,13 +10,16 @@
 
 class PongBall : public sf::CircleShape {
     constexpr static float BALL_SIZE_PERCENTAGE_WINDOW = 0.05;
-    constexpr static float MOVING_DISTANCE = 0.05;
+    constexpr static float MOVING_DISTANCE = 0.08;
     AngleDegrees direction;
     static float determineBallDiameter(const float& gameWindowWidth);
 public:
     explicit PongBall(const float& gameWindowWidth);
     void moveBall();
-    void bounce();
+    void bounceVerticalWall();
+    void bounceHorizontalWall();
+private:
+    void bounce(const float &newAngle);
 };
 
 #endif //IMPL_PONGBALL_H

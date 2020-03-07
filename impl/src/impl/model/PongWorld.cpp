@@ -16,12 +16,18 @@ PongWorld::PongWorld(const float &gameWindowWidth, const float &gameWindowHeight
         bottomWall{0, gameWindowHeight - WALL_THICKNESS, gameWindowWidth, WALL_THICKNESS} {}
 
 void PongWorld::moveBall() {
-    list<Wall> walls = {leftWall, topWall, rightWall, bottomWall};
-    for (const Wall& wall : walls) {
+    list<Wall> verticalWalls = {leftWall, rightWall};
+    list<Wall> horizontalWalls = {topWall, bottomWall};
+    for (const Wall& wall : verticalWalls) {
         if (intersects(pongBall, wall)) {
-            pongBall.bounce();
+            pongBall.bounceVerticalWall();
         }
     }
 
+    for (const Wall& wall : horizontalWalls) {
+        if (intersects(pongBall, wall)) {
+            pongBall.bounceHorizontalWall();
+        }
+    }
     pongBall.moveBall();
 }
