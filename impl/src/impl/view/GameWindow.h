@@ -11,8 +11,8 @@
 using namespace std;
 
 class GameWindow: public sf::RenderWindow {
-    static const auto SCREEN_WIDTH = 640;
-    static const auto SCREEN_HEIGHT = 480;
+    static const auto SCREEN_WIDTH = 1024;
+    static const auto SCREEN_HEIGHT = 768;
     static const auto BITS_PER_PIXEL = 32;
 public:
     explicit GameWindow(const string& title);
