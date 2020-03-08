@@ -7,14 +7,16 @@
 
 #include <SFML/Graphics/CircleShape.hpp>
 #include "domainprimitives/AngleDegrees.h"
+#include "../util/RandomUtil/RandomUtil.h"
 
 class PongBall : public sf::CircleShape {
+
     constexpr static float BALL_SIZE_PERCENTAGE_WINDOW = 0.05;
     constexpr static float MOVING_DISTANCE = 0.08;
     AngleDegrees direction;
     static float determineBallDiameter(const float& gameWindowWidth);
 public:
-    explicit PongBall(const float& gameWindowWidth);
+    explicit PongBall(const float &gameWindowWidth, const float &xPos, const float &yPos);
     void moveBall();
     void bounceVerticalWall();
     void bounceHorizontalWall();

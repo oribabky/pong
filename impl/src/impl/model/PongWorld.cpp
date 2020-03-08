@@ -9,7 +9,7 @@
 using namespace std;
 
 PongWorld::PongWorld(const float &gameWindowWidth, const float &gameWindowHeight) :
-        pongBall{PongBall{gameWindowWidth}},
+        pongBall{PongBall{gameWindowWidth, gameWindowWidth / 2, gameWindowHeight / 2}},
         leftWall{Wall{0, 0, WALL_THICKNESS, gameWindowHeight}},
         topWall{Wall{0, 0, gameWindowWidth, WALL_THICKNESS}},
         rightWall{Wall{gameWindowWidth - WALL_THICKNESS, 0, WALL_THICKNESS, gameWindowHeight}},

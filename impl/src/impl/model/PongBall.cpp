@@ -3,17 +3,17 @@
 //
 
 #include "PongBall.h"
+#include "../util/RandomUtil/RandomUtil.h"
 #include <cmath>
 #include <iostream>
 
-PongBall::PongBall(const float &gameWindowWidth) :
+PongBall::PongBall(const float &gameWindowWidth, const float& xPos, const float& yPos) :
         sf::CircleShape{determineBallDiameter(gameWindowWidth)},
-        direction{AngleDegrees{33}}
+        direction{AngleDegrees{static_cast<float>(randomNumberBetween(0, 359))}}
         {
-    const sf::Color whiteColor{0xFF, 0xFF, 0xFF};
-    setFillColor(whiteColor);
+    setFillColor(sf::Color::White);
     setOrigin(getRadius(), getRadius());
-    setPosition(200, 200);
+    setPosition(xPos, yPos);
 }
 
 void PongBall::moveBall() {
