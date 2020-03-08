@@ -7,18 +7,18 @@
 #include <cmath>
 #include <iostream>
 
-PongBall::PongBall(const float &gameWindowWidth, const float& xPos, const float& yPos) :
-        sf::CircleShape{determineBallDiameter(gameWindowWidth)},
-        direction{AngleDegrees{static_cast<float>(randomNumberBetween(0, 359))}}
-        {
+PongBall::PongBall(const float &gameWindowArea, const float& xPos, const float& yPos) :
+        sf::CircleShape{determineBallDiameter(gameWindowArea)},
+        direction{AngleDegrees{static_cast<float>(randomNumberBetween(0, 359))}},
+        movementSpeed(MOVEMENT_SPEED_COEFFICIENT * (getRadius() * 2) * gameWindowArea) {
     setFillColor(sf::Color::White);
     setOrigin(getRadius(), getRadius());
     setPosition(xPos, yPos);
 }
 
 void PongBall::moveBall() {
-    float xDistance = cos(direction.asRadians()) * MOVING_DISTANCE;
-    float yDistance = sin(direction.asRadians()) * MOVING_DISTANCE;
+    float xDistance = cos(direction.asRadians()) * movementSpeed;
+    float yDistance = sin(direction.asRadians()) * movementSpeed;
     yDistance = -yDistance; // match the coordinates system in the window object
 
     move(xDistance, yDistance);
@@ -44,6 +44,6 @@ void PongBall::bounce(const float &newAngle) {
     direction.setAngle(newAngle);
 }
 
-float PongBall::determineBallDiameter(const float& gameWindowWidth) {
-    return gameWindowWidth * BALL_SIZE_PERCENTAGE_WINDOW;
+float PongBall::determineBallDiameter(const float& gameWindowArea) {
+    return gameWindowArea * BALL_SIZE_PERCENTAGE_WINDOW_AREA;
 }

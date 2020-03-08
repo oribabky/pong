@@ -11,12 +11,13 @@
 
 class PongBall : public sf::CircleShape {
 
-    constexpr static float BALL_SIZE_PERCENTAGE_WINDOW = 0.05;
-    constexpr static float MOVING_DISTANCE = 0.08;
+    constexpr static float BALL_SIZE_PERCENTAGE_WINDOW_AREA = 0.000015;
+    constexpr static float MOVEMENT_SPEED_COEFFICIENT = 0.000000006;
+    const float movementSpeed;
     AngleDegrees direction;
     static float determineBallDiameter(const float& gameWindowWidth);
 public:
-    explicit PongBall(const float &gameWindowWidth, const float &xPos, const float &yPos);
+    explicit PongBall(const float &gameWindowArea, const float &xPos, const float &yPos);
     void moveBall();
     void bounceVerticalWall();
     void bounceHorizontalWall();
