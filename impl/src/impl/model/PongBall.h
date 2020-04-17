@@ -8,11 +8,12 @@
 #include <SFML/Graphics/CircleShape.hpp>
 #include "domainprimitives/AngleDegrees.h"
 #include "../util/RandomUtil/RandomUtil.h"
+#include "PlayerBar.h"
 
 class PongBall : public sf::CircleShape {
 
     constexpr static float BALL_SIZE_PERCENTAGE_WINDOW_AREA = 0.000015;
-    constexpr static float MOVEMENT_SPEED_COEFFICIENT = 0.000000006;
+    constexpr static float MOVEMENT_SPEED_COEFFICIENT = 0.000000009;
     const float movementSpeed;
     AngleDegrees direction;
     static float determineBallDiameter(const float& gameWindowWidth);
@@ -21,6 +22,8 @@ public:
     void moveBall();
     void bounceVerticalWall();
     void bounceHorizontalWall();
+    void bouncePlayerBar(const PlayerBar& bar);
+
 private:
     void bounce(const float &newAngle);
 };

@@ -24,6 +24,10 @@ void AngleDegrees::setAngle(const float& inputAngle) {
     }
 }
 
+void AngleDegrees::setAngle(const AngleDegrees& inputAngle) {
+    *this = inputAngle;
+}
+
 float AngleDegrees::getAngle() const {
     return angle;
 }
@@ -31,3 +35,10 @@ float AngleDegrees::getAngle() const {
 float AngleDegrees::asRadians() const {
     return M_PI * angle / 180;
 }
+
+float radiansToDegrees(const float& radians) {
+    return radians * 180 / M_PI;
+}
+
+
+

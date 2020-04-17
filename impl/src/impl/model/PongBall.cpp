@@ -4,6 +4,7 @@
 
 #include "PongBall.h"
 #include "../util/RandomUtil/RandomUtil.h"
+#include "../util/intersectionutil/IntersectionUtil.h"
 #include <cmath>
 #include <iostream>
 
@@ -35,8 +36,14 @@ void PongBall::bounceVerticalWall() {
 }
 
 void PongBall::bounceHorizontalWall() {
-    auto newAngle = 360 - direction.getAngle();
+    const auto newAngle = 360 - direction.getAngle();
     bounce(newAngle);
+}
+
+void PongBall::bouncePlayerBar(const PlayerBar& bar) {
+    const auto newAngle = IMPL_INTERSECTIONUTIL_H::calculateAngleTwoPoints(bar.getPosition(), this->getPosition());
+    std::cout << "Bounce Player bar! new angle: " << newAngle.getAngle() << std::endl;
+    bounce(newAngle.getAngle());
 }
 
 void PongBall::bounce(const float &newAngle) {
@@ -47,3 +54,4 @@ void PongBall::bounce(const float &newAngle) {
 float PongBall::determineBallDiameter(const float& gameWindowArea) {
     return gameWindowArea * BALL_SIZE_PERCENTAGE_WINDOW_AREA;
 }
+

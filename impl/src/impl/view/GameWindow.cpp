@@ -17,4 +17,6 @@ void GameWindow::drawWorld(const PongWorld &pongWorld) {
     draw(pongWorld.bottomWall);
     draw(pongWorld.leftWall);
     draw(pongWorld.pongBall);
+    draw(pongWorld.leftPlayerBar);
+    draw(pongWorld.rightPlayerBar);
 }
