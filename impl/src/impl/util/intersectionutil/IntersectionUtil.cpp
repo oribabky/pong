@@ -7,7 +7,6 @@
 #include <cmath>
 #include "IntersectionUtil.h"
 #include "AngleDegrees.h"
-#include "PongBall.h"
 
 using namespace sf;
 

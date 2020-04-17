@@ -7,9 +7,9 @@
 
 
 #include <MoveDirection.h>
-#include "../pongball/PongBall.h"
-#include "../wall/Wall.h"
-#include "../playerbar/PlayerBar.h"
+#include "PongBall.h"
+#include "Wall.h"
+#include "PlayerBar.h"
 
 class PongWorld {
     static constexpr auto WALL_THICKNESS = 10;

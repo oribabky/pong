@@ -4,7 +4,7 @@
 
 #include <list>
 #include "PongWorld.h"
-#include "../../../util/intersectionutil/IntersectionUtil.h"
+#include "IntersectionUtil.h"
 #include "MoveDirection.h"
 
 using namespace std;
