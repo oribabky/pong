@@ -38,6 +38,10 @@ bool intersects(const CircleShape &circle, const RectangleShape &rect) {
     return (cornerDistance_sq <= (pow(circleRadius, 2)));
 }
 
+bool intersects(const RectangleShape& rect1, const RectangleShape& rect2) {
+    return rect1.getGlobalBounds().intersects(rect2.getGlobalBounds());
+}
+
 float yDistanceTwoPoints(const Vector2f& point1, const Vector2f& point2) {
     return abs(-point1.y - -point2.y);
 }

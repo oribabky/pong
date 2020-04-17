@@ -53,8 +53,12 @@ void PongWorld::moveLeftPlayerBar(const MoveDirection& moveDirection) {
 
 void PongWorld::movePlayerBar(PlayerBar& playerBar, const MoveDirection& moveDirection) {
     if (moveDirection == MoveDirection::UP) {
-        playerBar.moveUp();
+        if (!intersects(playerBar, topWall)) {
+            playerBar.moveUp();
+        }
     } else if (moveDirection == MoveDirection::DOWN) {
-        playerBar.moveDown();
+        if (!intersects(playerBar, bottomWall)) {
+            playerBar.moveDown();
+        }
     }
 }
