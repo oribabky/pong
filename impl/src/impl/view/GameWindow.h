@@ -6,7 +6,7 @@
 #define IMPL_GAMEWINDOW_H
 
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "../model/PongWorld.h"
+#include "PongWorld.h"
 
 using namespace std;
 

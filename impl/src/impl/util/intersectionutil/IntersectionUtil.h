@@ -5,7 +5,7 @@
 #ifndef IMPL_INTERSECTIONUTIL_H
 #define IMPL_INTERSECTIONUTIL_H
 
-#include "../../model/PongBall.h"
+#include "PongBall.h"
 
 bool intersects(const sf::CircleShape &circle, const sf::RectangleShape &rect);
 float yDistanceTwoPoints(const sf::Vector2f& point1, const sf::Vector2f& point2);

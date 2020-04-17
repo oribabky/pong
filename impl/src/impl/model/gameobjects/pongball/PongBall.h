@@ -6,8 +6,8 @@
 #define IMPL_PONGBALL_H
 
 #include <SFML/Graphics/CircleShape.hpp>
-#include "domainprimitives/AngleDegrees.h"
-#include "../util/RandomUtil/RandomUtil.h"
+#include "AngleDegrees.h"
+#include "RandomUtil.h"
 #include "PlayerBar.h"
 
 class PongBall : public sf::CircleShape {

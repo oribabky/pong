@@ -3,8 +3,8 @@
 //
 
 #include "PongBall.h"
-#include "../util/RandomUtil/RandomUtil.h"
-#include "../util/intersectionutil/IntersectionUtil.h"
+#include "RandomUtil.h"
+#include "IntersectionUtil.h"
 #include <cmath>
 #include <iostream>
 

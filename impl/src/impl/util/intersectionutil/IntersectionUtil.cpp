@@ -6,8 +6,8 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <cmath>
 #include "IntersectionUtil.h"
-#include "../../model/domainprimitives/AngleDegrees.h"
-#include "../../model/PongBall.h"
+#include "AngleDegrees.h"
+#include "PongBall.h"
 
 using namespace sf;
 

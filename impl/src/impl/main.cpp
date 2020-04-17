@@ -1,7 +1,7 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
 #include "view/GameWindow.h"
-#include "model/PongWorld.h"
+#include "PongWorld.h"
 
 int main() {
     GameWindow window{"my game"};
