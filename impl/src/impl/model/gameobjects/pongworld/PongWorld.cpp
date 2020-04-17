@@ -5,6 +5,7 @@
 #include <list>
 #include "PongWorld.h"
 #include "../../../util/intersectionutil/IntersectionUtil.h"
+#include "MoveDirection.h"
 
 using namespace std;
 
@@ -40,4 +41,20 @@ void PongWorld::moveBall() {
         }
     }
     pongBall.moveBall();
+}
+
+void PongWorld::moveRightPlayerBar(const MoveDirection& moveDirection) {
+    movePlayerBar(rightPlayerBar, moveDirection);
+}
+
+void PongWorld::moveLeftPlayerBar(const MoveDirection& moveDirection) {
+    movePlayerBar(leftPlayerBar, moveDirection);
+}
+
+void PongWorld::movePlayerBar(PlayerBar& playerBar, const MoveDirection& moveDirection) {
+    if (moveDirection == MoveDirection::UP) {
+        playerBar.moveUp();
+    } else if (moveDirection == MoveDirection::DOWN) {
+        playerBar.moveDown();
+    }
 }

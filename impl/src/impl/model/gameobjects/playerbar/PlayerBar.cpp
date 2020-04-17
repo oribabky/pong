@@ -10,3 +10,13 @@ PlayerBar::PlayerBar(const float &xPos, const float &yPos, const float &width, c
         setOrigin(width / 2, height / 2);
         setPosition(xPos, yPos);
     }
+
+void PlayerBar::moveDown() {
+    const auto currentPosition = getPosition();
+    setPosition(currentPosition.x, currentPosition.y + MOVEMENT_DISTANCE);
+}
+
+void PlayerBar::moveUp() {
+    const auto currentPosition = getPosition();
+    setPosition(currentPosition.x, currentPosition.y - MOVEMENT_DISTANCE);
+}

@@ -9,9 +9,11 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 
 class PlayerBar : public sf::RectangleShape {
-    constexpr static float movementSpeed = 9;
+    constexpr static float MOVEMENT_DISTANCE = 1;
 public:
     PlayerBar(const float &xPos, const float &yPos, const float &width, const float &height);
+    void moveUp();
+    void moveDown();
 };
 
 
