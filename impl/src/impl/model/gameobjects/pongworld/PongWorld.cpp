@@ -15,8 +15,8 @@ PongWorld::PongWorld(const float &gameWindowWidth, const float &gameWindowHeight
         topWall{Wall{0, 0, gameWindowWidth, WALL_THICKNESS}},
         rightWall{Wall{gameWindowWidth - WALL_THICKNESS, 0, WALL_THICKNESS, gameWindowHeight}},
         bottomWall{Wall{0, gameWindowHeight - WALL_THICKNESS, gameWindowWidth, WALL_THICKNESS}},
-        leftPlayerBar{PlayerBar{DISTANCE_VERTICAL_WALL_TO_PLAYER_BAR, gameWindowHeight / 2, PLAYER_BAR_THICKNESS, gameWindowHeight / 2}},
-        rightPlayerBar{PlayerBar{gameWindowWidth - DISTANCE_VERTICAL_WALL_TO_PLAYER_BAR, gameWindowHeight / 2, PLAYER_BAR_THICKNESS, gameWindowHeight / 2}} {}
+        leftPlayerBar{PlayerBar{DISTANCE_VERTICAL_WALL_TO_PLAYER_BAR, gameWindowHeight / 2, PLAYER_BAR_THICKNESS, gameWindowHeight / 4}},
+        rightPlayerBar{PlayerBar{gameWindowWidth - DISTANCE_VERTICAL_WALL_TO_PLAYER_BAR, gameWindowHeight / 2, PLAYER_BAR_THICKNESS, gameWindowHeight / 4}} {}
 
 void PongWorld::moveBall() {
     list<Wall> verticalWalls = {leftWall, rightWall};
