@@ -1,1 +1,2 @@
 # pong
+The classic game.
